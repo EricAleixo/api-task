@@ -1,0 +1,15 @@
+version: '3.0'
+
+services:
+  app:
+    build: .
+    container_name: task-api
+    ports:
+      - "3000:3000"
+    volumes:
+    - .:/usr/src/app
+    - node_modules:/usr/src/app/node_modules
+
+volumes:
+  node_modules:
+
