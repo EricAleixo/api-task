@@ -1,7 +1,5 @@
-export interface TaskResponse {
-    title: string,
-    description: string,
-    status: string,
-    data_vencimento: string,
-    userID: string
+import { Task } from "@prisma/client";
+
+export interface TaskResponse extends Task {
+    id?: string
 }

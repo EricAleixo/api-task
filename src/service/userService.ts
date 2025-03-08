@@ -1,5 +1,5 @@
 import { User } from "@prisma/client";
-import { createUser, deleteUser, getAllUser } from "../repository/userRepository";
+import { createUser, deleteUser, getAllUser, putUser } from "../repository/userRepository";
 import { hash } from "bcryptjs";
 
 
@@ -14,6 +14,10 @@ export const createUserService = async (user: User) => {
     user.password = hashedPassword;
 
     return await createUser(user);
+}
+
+export const updateUserService = async (id: string, userUpdated: User) => {
+    return await putUser(id, userUpdated);
 }
 
 export const deleteUserService = async (id: string) => {

@@ -14,7 +14,7 @@ export const loginService = async (authUser: AuthUser) => {
     const passwordMatched = await compare(authUser.password, user.password);
 
     if (!passwordMatched) {
-        throw new Error("Senhas diferentes")
+        throw new Error("Senhas diferentes");
     }
 
     if (SECRET) {
